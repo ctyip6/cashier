@@ -1,8 +1,21 @@
+import org.junit.Before;
 import org.junit.Test;
 
-public class CashierTest {
+import java.util.HashMap;
+import java.util.Map;
 
-    Cashier cashier = new Cashier();
+public class AppleBuyOneGetOneFreeCashierTest {
+
+    Cashier cashier;
+
+    @Before
+    public void setUp() {
+        Map<Class<? extends Product>, DiscountStrategy> productDiscountMapping = new HashMap<>();
+        productDiscountMapping.put(Apple.class, new TwoForOneDiscountStrategy());
+        productDiscountMapping.put(Banana.class, new NoDiscountStrategy());
+
+        cashier = new Cashier(productDiscountMapping);
+    }
 
     @Test
     public void canGetThePriceOfAnAppleAsTenDollars() {

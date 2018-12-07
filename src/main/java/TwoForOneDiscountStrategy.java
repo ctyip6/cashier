@@ -4,15 +4,13 @@ public class TwoForOneDiscountStrategy implements DiscountStrategy {
 
     @Override
     public int discount(List<Product> products) {
-        int counter = 1;
+        int counter = 0;
         int price = 0;
         for (Product p : products) {
-            if (counter % 2 == 0) {
-                counter++;
-                continue;
-            }
-            price += p.getPrice();
             counter++;
+            if (counter % 2 == 1) {
+                price += p.getPrice();
+            }
         }
         return price;
     }
