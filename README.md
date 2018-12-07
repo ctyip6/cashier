@@ -17,3 +17,6 @@ Minor changes to make it cleaner.
 ## Discussion
 1. You may argue that it is "over-engineered" as the changes in product-strategy mapping is an imaginary requirement I come up with myself. 
 But it may be worth to consider as the coding effort is limited but it provides a better extensibility in the future.
+
+## Assumptions
+1. The discount strategy is only bound to the type of product. There is no cross product promotion.
