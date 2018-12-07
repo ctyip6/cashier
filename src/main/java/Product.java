@@ -1,15 +1,9 @@
 abstract public class Product {
 
     private final int price;
-    private final DiscountStrategy discountStrategy;
 
-    public Product(int price, DiscountStrategy discountStrategy) {
+    public Product(int price) {
         this.price = price;
-        this.discountStrategy = discountStrategy;
-    }
-
-    public DiscountStrategy getDiscountStrategy() {
-        return discountStrategy;
     }
 
     public int getPrice() {
